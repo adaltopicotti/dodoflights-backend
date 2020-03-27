@@ -16,7 +16,7 @@ const IslandSchema = new mongoose.Schema({
 });
 
 IslandSchema.virtual('fruit_url').get(function() {
-  return `http://localhost:3333/files/${this.fruit}.png`
+  return `http://flights.riddlecode.com/files/${this.fruit}.png`
 });
 
 module.exports = mongoose.model('Island', IslandSchema);
