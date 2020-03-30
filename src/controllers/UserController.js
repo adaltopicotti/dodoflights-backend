@@ -48,17 +48,17 @@ module.exports = {
     return res.json({ user, token });
   },
 
-  async authMiddleware (req, res, next) {
-    const [, token] = req.headers.authorization.split(' ');
+  async authMiddleware(req, res, next) {
+    const [, token] = req.headers.authorization.split(" ");
     try {
       const payload = jwt.verify(token);
       console.log(payload);
       const user = await User.findById(payload.user);
-      
+
       if (!user) {
-        return res.status(401).json({ error: "Token inválido"})
+        return res.status(401).json({ error: "Token inválido" });
       }
-      
+
       req.auth = user;
 
       next();
@@ -66,8 +66,4 @@ module.exports = {
       res.send(401, error);
     }
   }
-
-  
-
-
 };
