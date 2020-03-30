@@ -15,7 +15,7 @@ module.exports = {
   },
 
   async store(req, res) {
-    const { ownerName, islandName, fruit, hemisphere, turnipPrice, dodoCode} = req.body;
+    const { owner, island, fruit, hemisphere, turnip_price, dodo_code } = req.body;
     // let island = await Island.find({ ownerName: ownerName })
     // if(island.length < 1) {
       switch(fruit.toUpperCase()) {
@@ -36,19 +36,19 @@ module.exports = {
           break;
         default:
       }
-      const island = await Island.create({
-        ownerName,
-        islandName,
+      const island_post = await Island.create({
+        owner,
+        islan,
         fruit,
         fruit_url,
         hemisphere,
-        turnipPrice,
-        dodoCode,
+        turnip_price,
+        dodo_code,
         createdAt: new Date(Date.now()).toLocaleString()
       });
 
     // }
 
-    return res.json(island);
+    return res.json(island_post);
   }
 }

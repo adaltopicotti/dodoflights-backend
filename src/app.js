@@ -6,9 +6,10 @@ const routes = require('./routes');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-yx7aw.mongodb.net/dodoflight?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-yx7aw.mongodb.net/dodoflight-test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  // useCreateIndex: true
 })
 
 app.use(cors());
