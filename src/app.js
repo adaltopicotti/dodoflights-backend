@@ -3,10 +3,11 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+require('dotenv/config');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-yx7aw.mongodb.net/dodoflight-test?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // useCreateIndex: true
