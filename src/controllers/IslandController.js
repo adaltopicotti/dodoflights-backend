@@ -49,7 +49,7 @@ module.exports = {
     }
     const island_post = await Island.create({
       owner,
-      islan,
+      island,
       fruit,
       fruit_url,
       hemisphere,

@@ -12,12 +12,12 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-yx7aw.mongodb.net/d
   // useCreateIndex: true
 })
 
-app.use(cors());
+app.use(cors({origin: 'http://localhost:3000', credentials: true}));
 app.use(express.json());
 app.use('/files', express.static(path.resolve(__dirname, 'files')));
 app.use(routes);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3333;
 app.listen(port, function() {
   console.log('Listening on port %s',  port);
 })
