@@ -18,7 +18,7 @@ routes.post("/signup", UserController.signup);
 // Login: Criando sessão
 routes.post("/login", SessionController.create);
 // Auth: verifica se há usuário logado
-routes.get("/auth", SessionController.authMiddleware, SessionController.authVerify);
+routes.get("/auth", SessionController.authMiddleware, ProfileController.index);
 
 routes.get("/islands", IslandController.index);
 routes.post("/islands", IslandController.store);

@@ -5,7 +5,7 @@ const jwt = require('../../jwt');
 module.exports = {
   async index(req, res) {
 
-    const {uid} = jwt.verify(req.headers.authorization);
+    const {uid} = jwt.verify(req.headers.authorization.replace("Bearer ", ""));
     console.log(uid);
 
     const user = await User.findById(uid);
